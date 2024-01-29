@@ -1,0 +1,1503 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/29/2024 12:15:29 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-SB9MJ7T"
+  DTS:CreatorName="DESKTOP-SB9MJ7T\Notebook"
+  DTS:DTSID="{84B2793C-038E-4D44-B6F9-5CF71DE08704}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{F1BBE52A-0965-4ACE-AA32-B936B3858BA7}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-SB9MJ7T\SQLEXPRESS.CarRental]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F47E2C4F-7E20-4DB5-94B1-60A8C0F3F9E4}"
+      DTS:ObjectName="DESKTOP-SB9MJ7T\SQLEXPRESS.CarRental">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-SB9MJ7T\SQLEXPRESS;Initial Catalog=CarRental;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{F47E2C4F-7E20-4DB5-94B1-60A8C0F3F9E4}DESKTOP-SB9MJ7T\SQLEXPRESS.CarRental;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-SB9MJ7T\SQLEXPRESS.CarRental 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{16FB0757-49EA-4567-9289-3F097FBEB756}"
+      DTS:ObjectName="DESKTOP-SB9MJ7T\SQLEXPRESS.CarRental 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-SB9MJ7T\SQLEXPRESS;Initial Catalog=CarRental;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-SB9MJ7T\SQLEXPRESS.CarRental 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C043BC3D-B388-448B-917C-22815D721A04}"
+      DTS:ObjectName="DESKTOP-SB9MJ7T\SQLEXPRESS.CarRental 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-SB9MJ7T\SQLEXPRESS;Initial Catalog=CarRental;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F64E33E2-BFC3-4872-B3C1-A280C3379CE2}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Variable">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5F531EF1-0B88-4D65-972B-0FD4A30A68FD}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Cars"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Cars"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Cars]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Cars.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-SB9MJ7T\SQLEXPRESS.CarRental 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-SB9MJ7T\SQLEXPRESS.CarRental 2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].Columns[Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                      lineageId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].Columns[Id]"
+                      name="Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].Columns[PlateNumber]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].ExternalColumns[PlateNumber]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].Columns[PlateNumber]"
+                      name="PlateNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].Columns[Manufacturer]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].ExternalColumns[Manufacturer]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].Columns[Manufacturer]"
+                      name="Manufacturer"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].Columns[Model]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].ExternalColumns[Model]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].Columns[Model]"
+                      name="Model"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].Columns[CarYear]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].ExternalColumns[CarYear]"
+                      lineageId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].Columns[CarYear]"
+                      name="CarYear"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].Columns[CategoryId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].ExternalColumns[CategoryId]"
+                      lineageId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].Columns[CategoryId]"
+                      name="CategoryId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].Columns[Doors]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].ExternalColumns[Doors]"
+                      lineageId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].Columns[Doors]"
+                      name="Doors"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].Columns[Picture]"
+                      dataType="image"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].ExternalColumns[Picture]"
+                      lineageId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].Columns[Picture]"
+                      name="Picture"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].Columns[Condition]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].ExternalColumns[Condition]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].Columns[Condition]"
+                      name="Condition"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].Columns[Available]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].ExternalColumns[Available]"
+                      lineageId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].Columns[Available]"
+                      name="Available"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].ExternalColumns[PlateNumber]"
+                      dataType="wstr"
+                      length="50"
+                      name="PlateNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].ExternalColumns[Manufacturer]"
+                      dataType="wstr"
+                      length="50"
+                      name="Manufacturer" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].ExternalColumns[Model]"
+                      dataType="wstr"
+                      length="50"
+                      name="Model" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].ExternalColumns[CarYear]"
+                      dataType="i4"
+                      name="CarYear" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].ExternalColumns[CategoryId]"
+                      dataType="i4"
+                      name="CategoryId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].ExternalColumns[Doors]"
+                      dataType="i4"
+                      name="Doors" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].ExternalColumns[Picture]"
+                      dataType="image"
+                      name="Picture" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].ExternalColumns[Condition]"
+                      dataType="wstr"
+                      length="50"
+                      name="Condition" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Output].ExternalColumns[Available]"
+                      dataType="bool"
+                      name="Available" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Error Output].Columns[Id]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Error Output].Columns[Id]"
+                      name="Id" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Error Output].Columns[PlateNumber]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Error Output].Columns[PlateNumber]"
+                      name="PlateNumber" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Error Output].Columns[Manufacturer]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Error Output].Columns[Manufacturer]"
+                      name="Manufacturer" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Error Output].Columns[Model]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Error Output].Columns[Model]"
+                      name="Model" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Error Output].Columns[CarYear]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Error Output].Columns[CarYear]"
+                      name="CarYear" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Error Output].Columns[CategoryId]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Error Output].Columns[CategoryId]"
+                      name="CategoryId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Error Output].Columns[Doors]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Error Output].Columns[Doors]"
+                      name="Doors" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Error Output].Columns[Picture]"
+                      dataType="image"
+                      lineageId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Error Output].Columns[Picture]"
+                      name="Picture" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Error Output].Columns[Condition]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Error Output].Columns[Condition]"
+                      name="Condition" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Error Output].Columns[Available]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Error Output].Columns[Available]"
+                      name="Available" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Cars.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Categories"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Categories"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Categories]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Categories.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-SB9MJ7T\SQLEXPRESS.CarRental 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-SB9MJ7T\SQLEXPRESS.CarRental 2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Output].Columns[Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                      lineageId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Output].Columns[Id]"
+                      name="Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Output].Columns[CategoryName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Output].ExternalColumns[CategoryName]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Output].Columns[CategoryName]"
+                      name="CategoryName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Output].Columns[DailyRate]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Output].ExternalColumns[DailyRate]"
+                      lineageId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Output].Columns[DailyRate]"
+                      name="DailyRate"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Output].Columns[WeeklyRate]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Output].ExternalColumns[WeeklyRate]"
+                      lineageId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Output].Columns[WeeklyRate]"
+                      name="WeeklyRate"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Output].Columns[MonthlyRate]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Output].ExternalColumns[MonthlyRate]"
+                      lineageId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Output].Columns[MonthlyRate]"
+                      name="MonthlyRate"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Output].Columns[WeekendRate]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Output].ExternalColumns[WeekendRate]"
+                      lineageId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Output].Columns[WeekendRate]"
+                      name="WeekendRate"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Output].ExternalColumns[CategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      name="CategoryName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Output].ExternalColumns[DailyRate]"
+                      dataType="numeric"
+                      name="DailyRate"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Output].ExternalColumns[WeeklyRate]"
+                      dataType="numeric"
+                      name="WeeklyRate"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Output].ExternalColumns[MonthlyRate]"
+                      dataType="numeric"
+                      name="MonthlyRate"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Output].ExternalColumns[WeekendRate]"
+                      dataType="numeric"
+                      name="WeekendRate"
+                      precision="5"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Error Output].Columns[Id]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Error Output].Columns[Id]"
+                      name="Id" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Error Output].Columns[CategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Error Output].Columns[CategoryName]"
+                      name="CategoryName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Error Output].Columns[DailyRate]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Error Output].Columns[DailyRate]"
+                      name="DailyRate"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Error Output].Columns[WeeklyRate]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Error Output].Columns[WeeklyRate]"
+                      name="WeeklyRate"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Error Output].Columns[MonthlyRate]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Error Output].Columns[MonthlyRate]"
+                      name="MonthlyRate"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Error Output].Columns[WeekendRate]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Error Output].Columns[WeekendRate]"
+                      name="WeekendRate"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Categories.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Customers"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Customers"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Customers]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Customers.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-SB9MJ7T\SQLEXPRESS.CarRental 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-SB9MJ7T\SQLEXPRESS.CarRental 2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].Columns[Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                      lineageId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].Columns[Id]"
+                      name="Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].Columns[DriverLicenceNumber]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].ExternalColumns[DriverLicenceNumber]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].Columns[DriverLicenceNumber]"
+                      name="DriverLicenceNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].Columns[FullName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].ExternalColumns[FullName]"
+                      length="100"
+                      lineageId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].Columns[FullName]"
+                      name="FullName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].Columns[Address]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].ExternalColumns[Address]"
+                      length="100"
+                      lineageId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].Columns[Address]"
+                      name="Address"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].Columns[City]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      length="20"
+                      lineageId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].Columns[ZIPCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].ExternalColumns[ZIPCode]"
+                      length="30"
+                      lineageId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].Columns[ZIPCode]"
+                      name="ZIPCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].Columns[Notes]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].ExternalColumns[Notes]"
+                      length="100"
+                      lineageId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].Columns[Notes]"
+                      name="Notes"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].ExternalColumns[DriverLicenceNumber]"
+                      dataType="wstr"
+                      length="50"
+                      name="DriverLicenceNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].ExternalColumns[FullName]"
+                      dataType="wstr"
+                      length="100"
+                      name="FullName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].ExternalColumns[Address]"
+                      dataType="wstr"
+                      length="100"
+                      name="Address" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="20"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].ExternalColumns[ZIPCode]"
+                      dataType="wstr"
+                      length="30"
+                      name="ZIPCode" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Output].ExternalColumns[Notes]"
+                      dataType="wstr"
+                      length="100"
+                      name="Notes" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Error Output].Columns[Id]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Error Output].Columns[Id]"
+                      name="Id" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Error Output].Columns[DriverLicenceNumber]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Error Output].Columns[DriverLicenceNumber]"
+                      name="DriverLicenceNumber" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Error Output].Columns[FullName]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Error Output].Columns[FullName]"
+                      name="FullName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Error Output].Columns[Address]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Error Output].Columns[Address]"
+                      name="Address" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Error Output].Columns[City]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Error Output].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Error Output].Columns[ZIPCode]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Error Output].Columns[ZIPCode]"
+                      name="ZIPCode" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Error Output].Columns[Notes]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Error Output].Columns[Notes]"
+                      name="Notes" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Customers.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Employees"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Employees"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Employees]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Employees.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-SB9MJ7T\SQLEXPRESS.CarRental 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-SB9MJ7T\SQLEXPRESS.CarRental 2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Output].Columns[Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                      lineageId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Output].Columns[Id]"
+                      name="Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      name="FirstName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Output].Columns[LastName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Output].Columns[LastName]"
+                      name="LastName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Output].Columns[Title]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Output].ExternalColumns[Title]"
+                      length="30"
+                      lineageId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Output].Columns[Title]"
+                      name="Title"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Output].Columns[Notes]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Output].ExternalColumns[Notes]"
+                      lineageId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Output].Columns[Notes]"
+                      name="Notes"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Output].ExternalColumns[Title]"
+                      dataType="wstr"
+                      length="30"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Output].ExternalColumns[Notes]"
+                      dataType="nText"
+                      name="Notes" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Error Output].Columns[Id]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Error Output].Columns[Id]"
+                      name="Id" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      name="FirstName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      name="LastName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Error Output].Columns[Title]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Error Output].Columns[Title]"
+                      name="Title" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Error Output].Columns[Notes]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Error Output].Columns[Notes]"
+                      name="Notes" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Employees.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\RentalOrders"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="RentalOrders"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[RentalOrders]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\RentalOrders.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-SB9MJ7T\SQLEXPRESS.CarRental 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-SB9MJ7T\SQLEXPRESS.CarRental 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[Id]"
+                      name="Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[EmployeeId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[EmployeeId]"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[EmployeeId]"
+                      name="EmployeeId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[CustomerId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[CustomerId]"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[CustomerId]"
+                      name="CustomerId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[CarId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[CarId]"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[CarId]"
+                      name="CarId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[TankLevel]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[TankLevel]"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[TankLevel]"
+                      name="TankLevel"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[KilometrageStart]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[KilometrageStart]"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[KilometrageStart]"
+                      name="KilometrageStart"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[KilometrageEnd]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[KilometrageEnd]"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[KilometrageEnd]"
+                      name="KilometrageEnd"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[TotalKilometrage]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[TotalKilometrage]"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[TotalKilometrage]"
+                      name="TotalKilometrage"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[StartDate]"
+                      dataType="dbTimeStamp2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[StartDate]"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[StartDate]"
+                      name="StartDate"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[EndDate]"
+                      dataType="dbTimeStamp2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[EndDate]"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[EndDate]"
+                      name="EndDate"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[TotalDays]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[TotalDays]"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[TotalDays]"
+                      name="TotalDays"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[RateApplied]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[RateApplied]"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[RateApplied]"
+                      name="RateApplied"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[TaxRate]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[TaxRate]"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[TaxRate]"
+                      name="TaxRate"
+                      precision="7"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[OrderStatus]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[OrderStatus]"
+                      length="30"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[OrderStatus]"
+                      name="OrderStatus"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[Notes]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[Notes]"
+                      length="100"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].Columns[Notes]"
+                      name="Notes"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[EmployeeId]"
+                      dataType="i4"
+                      name="EmployeeId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[CustomerId]"
+                      dataType="i4"
+                      name="CustomerId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[CarId]"
+                      dataType="i4"
+                      name="CarId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[TankLevel]"
+                      dataType="i4"
+                      name="TankLevel" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[KilometrageStart]"
+                      dataType="i4"
+                      name="KilometrageStart" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[KilometrageEnd]"
+                      dataType="i4"
+                      name="KilometrageEnd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[TotalKilometrage]"
+                      dataType="i4"
+                      name="TotalKilometrage" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[StartDate]"
+                      dataType="dbTimeStamp2"
+                      name="StartDate"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[EndDate]"
+                      dataType="dbTimeStamp2"
+                      name="EndDate"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[TotalDays]"
+                      dataType="i4"
+                      name="TotalDays" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[RateApplied]"
+                      dataType="numeric"
+                      name="RateApplied"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[TaxRate]"
+                      dataType="numeric"
+                      name="TaxRate"
+                      precision="7"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[OrderStatus]"
+                      dataType="wstr"
+                      length="30"
+                      name="OrderStatus" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Output].ExternalColumns[Notes]"
+                      dataType="wstr"
+                      length="100"
+                      name="Notes" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[Id]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[Id]"
+                      name="Id" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[EmployeeId]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[EmployeeId]"
+                      name="EmployeeId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[CustomerId]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[CustomerId]"
+                      name="CustomerId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[CarId]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[CarId]"
+                      name="CarId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[TankLevel]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[TankLevel]"
+                      name="TankLevel" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[KilometrageStart]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[KilometrageStart]"
+                      name="KilometrageStart" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[KilometrageEnd]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[KilometrageEnd]"
+                      name="KilometrageEnd" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[TotalKilometrage]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[TotalKilometrage]"
+                      name="TotalKilometrage" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[StartDate]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[StartDate]"
+                      name="StartDate"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[EndDate]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[EndDate]"
+                      name="EndDate"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[TotalDays]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[TotalDays]"
+                      name="TotalDays" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[RateApplied]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[RateApplied]"
+                      name="RateApplied"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[TaxRate]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[TaxRate]"
+                      name="TaxRate"
+                      precision="7"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[OrderStatus]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[OrderStatus]"
+                      name="OrderStatus" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[Notes]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[Notes]"
+                      name="Notes" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\RentalOrders.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Data Flow Task"
+          TopLeft="239.785714285714,114.071428571429" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Data Flow Task\RentalOrders"
+          TopLeft="96,65" />
+        <NodeLayout
+          Size="102,42"
+          Id="Package\Data Flow Task\Cars"
+          TopLeft="340.5,43.5" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\Data Flow Task\Categories"
+          TopLeft="516.5,52.5" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\Data Flow Task\Customers"
+          TopLeft="69.5,168.5" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Data Flow Task\Employees"
+          TopLeft="273.5,159.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\RentalOrders">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Cars">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Categories">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Customers">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Employees">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
